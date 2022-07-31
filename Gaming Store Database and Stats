@@ -1,0 +1,20 @@
+-- Create a gamming store database
+
+CREATE TABLE Gamingstore (id INTEGER PRIMARY KEY, name TEXT, aisle INTEGER, cost INTEGER, quantity INTEGER,total INTEGER);
+INSERT INTO gamingstore VALUES (1, "PS5", 2, 500, 2, 1000);
+INSERT INTO gamingstore VALUES (2, "XBOX", 2, 450, 10, 4500);
+INSERT INTO gamingstore VALUES (3, "LG Monitor", 3, 300, 5, 1500);
+INSERT INTO gamingstore VALUES (4, "PC", 3, 2000, 2, 4000);
+INSERT INTO gamingstore VALUES (5, "COD MW2 Remastered", 3, 80, 200, 16000);
+
+-- display the database ordered by aisle.
+SELECT * FROM gamingstore ORDER BY aisle asc;
+
+-- What is the total cost of all the items in the store?
+SELECT SUM (total) FROM gamingstore;
+
+--display database by item and individual cost
+SELECT name, cost FROM gamingstore;
+
+-- What is the total cost of each item if purchased once?
+SELECT SUM (cost) FROM gamingstore
